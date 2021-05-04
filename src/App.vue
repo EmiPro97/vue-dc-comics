@@ -5,20 +5,24 @@
 
 
     <!-- MAIN -->
-    <main>Main content</main>
+    <Main />
 
     <!-- FOOTER -->
-    <footer>Footer here</footer>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
+import Main from '@/components/Main.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
+    Main,
+    Footer,
   }
 }
 </script>
@@ -29,5 +33,39 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+    color: #fff;
+}
+
+/* Layout */
+.container{
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.flex{
+  display: flex;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.a-items-center{
+  align-items: center;
+}
+
+/* List */
+ul li{
+  list-style: none;
+}
+
+/* Text */
+a{
+  text-decoration: none;
+  color: inherit;
 }
 </style>
