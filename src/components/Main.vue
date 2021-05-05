@@ -14,7 +14,7 @@
                     <li v-for="(link, index) in buyLinks"
                         :key="index"
                     >
-                        <a class="flex a-items-center" href="link.href">
+                        <a class="flex a-items-center text-uppercase" href="link.href">
                             <div class="img-wrap"><img :src="link.url" :alt="link.text"></div>
                             {{link.text}}
                         </a>
@@ -75,7 +75,6 @@ main .buy-section .container{
 
 .buy-section li a{
     height: 100%;
-    text-transform: uppercase;
     transition: transform 0.3s;
 }
 

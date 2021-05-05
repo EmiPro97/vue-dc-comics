@@ -37,11 +37,12 @@ export default {
 
 body{
     color: #fff;
+    padding-top: 120px;
 }
 
 /* Layout */
 .container{
-  max-width: 1440px;
+  max-width: 1300px;
   height: 100%;
   margin: 0 auto;
 }
@@ -67,5 +68,9 @@ ul li{
 a{
   text-decoration: none;
   color: inherit;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
 }
 </style>
