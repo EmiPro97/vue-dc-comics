@@ -3,7 +3,6 @@
     <!-- HEADER -->
     <Header />
 
-
     <!-- MAIN -->
     <Main />
 
@@ -33,6 +32,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 body{
