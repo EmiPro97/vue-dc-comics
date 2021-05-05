@@ -54,6 +54,10 @@
 </script>
 
 <style scoped lang="scss">
+// Variables
+@import '../styles/vars';
+
+// Header fixed
 header{
 	position: fixed;
 	width: 100%;
@@ -67,11 +71,10 @@ header{
 .img-wrap {
 	max-width: 70px;
 	max-height: 70px;
-}
-
-.img-wrap img {
-	width: 100%;
-	height: 100%;
+	& img {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 /* Nav */
@@ -79,33 +82,26 @@ ul li {
 	margin-right: 35px;
 	line-height: 120px;
 	position: relative;
-	transition: color 0.4s;
+	&:last-child {margin-right: 0;}
+	& .line {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		height: 5px;
+		background: $dodger;
+		transition: width 0.4s ease-out;
+	}
+	& .line.active {
+		width: 100%;
+	}
+	& a {
+		font-weight: 700;
+		color: #464646;
+		transition: color 0.4s;
+		&.active,
+		&:hover {color: $dodger;}
+	}
 }
 
-ul li:last-child {
-	margin-right: 0;
-}
-
-ul li .line {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 0%;
-	height: 5px;
-	background: dodgerblue;
-	transition: width 0.4s ease-out;
-}
-
-ul li .line.active {
-	width: 100%;
-}
-
-li a {
-	font-weight: 700;
-	color: #464646;
-}
-
-li a.active {
-	color: dodgerblue;
-}
 </style>

@@ -1,11 +1,10 @@
 <template>
     <main>
-        <!-- Main content -->
-        <section class="content">
-            <div class="container flex a-items-center">
-                <h1>Content goes here...</h1>
-            </div>
-        </section>
+        <!-- Jumbotron -->
+        <section class="jumbotron"></section>
+
+        <!-- Current Series -->
+        <CurrentSeries/>
 
         <!-- Buy section -->
         <section class="buy-section">
@@ -26,9 +25,14 @@
 </template>
 
 <script>
+import CurrentSeries from '@/components/CurrentSeries.vue';
+
 export default {
     name: 'Main',
-     data() {
+    components: {
+        CurrentSeries,
+    },
+    data() {
         return {
             buyLinks: [
                 {text: 'digital comics', url: require('../assets/img/buy-comics-digital-comics.png'), href: '#'},
@@ -42,56 +46,46 @@ export default {
 }
 </script>
 
-<style scoped>
-main .content{
-    height: 130px;
-    background: #1c1c1c;
+<style scoped lang="scss">
+// Variables
+@import '../styles/vars';
+
+// Main content
+main{
+    // Jumbotron
+    .jumbotron{
+        height: 400px;
+        background: url('../assets/img/jumbotron.jpg');
+    }
+
+    // Buy section
+    .buy-section{
+        height: 155px;
+        background: $dodger;
+        .container{padding: 0 40px;}
+        ul{
+            width: 100%;
+            & li{
+                margin-right: 90px;
+                &:last-child{margin-right: 0;}
+                & a{
+                    height: 100%;
+                    transition: transform 0.3s;
+                    &:hover{transform: scale(1.05);}
+                }
+            }
+            
+            .img-wrap{
+                height: 50px;
+                margin-right: 10px;     
+                & img{height: 100%;}
+            }
+         
+            li:last-child .img-wrap{
+                height: 35px;
+            }
+        }
+    }
 }
 
-.content h1{
-    font-size: 35px;
-}
-
-main .buy-section{
-    height: 155px;
-    background: dodgerblue;
-}
-
-main .buy-section .container{
-    padding: 0 40px;
-}
-
-.buy-section ul{
-    width: 100%;
-}
-
-.buy-section ul li{
-    margin-right: 90px;
-}
-
-.buy-section ul li:last-child{
-    margin-right: 0;
-}
-
-.buy-section li a{
-    height: 100%;
-    transition: transform 0.3s;
-}
-
-.buy-section li a:hover{
-    transform: scale(1.05);
-}
-
-.buy-section .img-wrap{
-    height: 50px;
-    margin-right: 10px;
-}
-
-.buy-section li:last-child .img-wrap{
-    height: 35px;
-}
-
-.buy-section .img-wrap img{
-    height: 100%;
-}
 </style>

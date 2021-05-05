@@ -91,13 +91,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// Variables
+@import '../styles/vars';
+
+// Footer
 footer{
     // Footer links
     .footer-links{
         position: relative;
         height: 370px;
         padding-top: 35px;
-        background-image: url(../assets/img/footer-bg.jpg);
+        background-image: url('../assets/img/footer-bg.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         &::after{
@@ -107,7 +111,7 @@ footer{
             top: 0;
             left: 50%;
             right: 0;
-            background: url(../assets/img/dc-logo-bg.png);
+            background: url('../assets/img/dc-logo-bg.png');
             background-repeat: no-repeat;
             background-position: 20% center;
         }
@@ -125,7 +129,7 @@ footer{
     .footer-socials{
         height: 110px;
         background: #303030;
-        & h3{margin-right: 20px; color: dodgerblue;}
+        & h3{margin-right: 20px; color: $dodger;}
         & .social{padding-left: 20px;}
         & a{display: inline-block; transition: transform 0.3s ease-out;}
         & a:hover{transform: scale(1.1);}
@@ -135,7 +139,7 @@ footer{
     .btn{
         padding: 12px 15px;
         font-weight: 500;
-        border: 2px solid dodgerblue;
+        border: 2px solid $dodger;
         &:active{position: relative; top: 4px;}
     }
 }
